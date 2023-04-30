@@ -21,13 +21,14 @@ function AdduserOwner() {
         navig('/adminuser');
         else if(add==='Owner')
         navig('/adminowner')
-        // await fetch('http://localhost:8009/signup', {
-        //   method: 'POST',
-        //   body: JSON.stringify(formdata),
-        //   headers: {
-        //     'Content-Type': 'application/json'
-        //   }
-        // })
+        
+        await fetch('http://localhost:8009/signup', {
+          method: 'POST',
+          body: JSON.stringify(formdata),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
       
       }
     const navig=useNavigate();   

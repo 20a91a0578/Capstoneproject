@@ -16,7 +16,7 @@ server.get('/',(req,res)=>{login.find({}).then((result)=>res.send(result));   } 
 //---------------------------  To post the SIGNUP DATA into DATABASE ---------------------------
 server.post('/signup',(req,res)=>{
 login.insert({username:req.body.username,password:req.body.password,role:req.body.role}).then(()=>console.log('data inserted....'));   
-data.insert({username:req.body.username,password:req.body.password,role:req.body.role,address:req.body.address,email:req.body.email}).then(()=>console.log('data inserted....')) })
+data.insert({username:req.body.username,password:req.body.password,mobile:req.body.mobile,role:req.body.role,address:req.body.address,email:req.body.email}).then(()=>console.log('data inserted....')) })
 //----------------------------To get Car Images from Database  ----------------------------------
 server.get('/images',(req,res)=>{
    images.find({}).then((result)=>{res.send(result)}) });
@@ -36,6 +36,13 @@ server.get('/delete/:id',(req,res)=>{data.remove({_id:req.params.id})});
 server.post('/postfeed',(req,res)=>{data.insert({model:req.body.model,licpl:req.body.licpl,dur:req.body.dur,amount:req.body.amount,feedback:req.body.feedback,username:req.body.username}); console.log('hiii')});
 //------------------------- To get the Feedback ----------------------------------------------------
 server.get('/getfeed/:id',(req,res)=>data.find({username:req.params.id,feedback:{$ne:null}}).then((resu)=>res.send(resu)));
+//-------------------------- To get Owners ----------------------------------------------------------
+server.get('/getowner',(req,res)=>{data.find({role:'Owner'}).then((resl)=>res.send(resl))});
+//------------------------------ To get Users --------------------------------------------------------
+server.get('/getuser',(req,res)=>{data.find({role:'User'}).then((resl)=>res.send(resl))});
+
+//--------------------------- To delete USer/Owner ----------------------------------------------------
+server.get('/deleteow/:id',(req,res)=>{ data.remove({_id:req.params.id}).then((resu)=>console.log(resu))});
 
 server.listen(8009,()=>{
     console.log('server is listening on port 8009...');
