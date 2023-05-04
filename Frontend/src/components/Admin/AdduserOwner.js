@@ -15,7 +15,12 @@ function AdduserOwner() {
             [e.target.name]:e.target.value
         })
     }
-  
+  const back=()=>{
+    if(add==='User')
+        navig('/adminuser');
+        else if(add==='Owner')
+        navig('/adminowner')
+  }
     const handleSubmit = async () => {
         if(add==='User')
         navig('/adminuser');
@@ -36,7 +41,6 @@ function AdduserOwner() {
    <>
    <Adminnav/>
      <div className="lgin" >
-       
         <div className="row" >
             
             <div className="col-md-6 offset-md-3 lgn" style={{marginTop:'2%'}}>
@@ -83,8 +87,8 @@ function AdduserOwner() {
            
         </Form.Group>
         <br/>
-        <center><Button  className="btn btn-primary" onClick={handleSubmit} style={{marginBotto:'1%'}}>Add {add}</Button></center>
-       
+        <center><button className="btn btn-primary btn-sm" onClick={back} style={{marginRight:'25%'}}>back</button><Button  className="btn btn-primary btn-sm" onClick={handleSubmit} style={{marginBotto:'1%'}}>Add {add}</Button></center>
+       <br/>
       </Form>
       
       
