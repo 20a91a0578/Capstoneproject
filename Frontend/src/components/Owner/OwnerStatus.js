@@ -1,9 +1,15 @@
 import React from 'react';
 import './OwnSta.css';
+import { useState } from 'react';
 import OwnerNav from './OwnerNav';
 import img1 from './OwnSta.jpeg'
 function OwnerStatus()
 {
+    const user=JSON.parse(localStorage.getItem('imagess'));
+    const [sea,setser]=useState('');
+    const submit=()=>{
+        alert(sea);
+    }
     return(
         
         <>
@@ -13,11 +19,11 @@ function OwnerStatus()
             <form>
                 <label>
                 Licensce No:
-                    <input type="text" placeholder="Enter Licence No .." id="inpt" />
+                    <input type="text" placeholder="Enter Licence No .." id="inpt" onChange={(e)=>setser(e.target.value)} name='search' />
                 </label>
                 <br></br>
                 <br></br>
-                <button type='button' id='btn'>Submit</button>
+                <button type='button' onClick={submit} id='btn'>Submit</button>
             </form>
             <br></br>
             <hr></hr>           

@@ -18,6 +18,7 @@ function OwnerDashboard() {
         method:"GET"
       })
       const resw=await response.json();
+      localStorage.setItem('imagess',JSON.stringify(resw));
       setImages(resw);
   }
   const navigate=useNavigate();
