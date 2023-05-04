@@ -1,5 +1,5 @@
 import React from 'react'
-import Adminnav from './Adminnav'
+//import Adminnav from './Adminnav'
 import { useState,useEffect} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import {useNavigate} from 'react-router-dom'
@@ -47,7 +47,7 @@ useEffect(()=>{
 },[]);
   return (
     <>
-<Adminnav/>
+{/* <Adminnav/> */}
 <div>
 <div className='row' style={{marginTop:"1%"}}>
     <div className='col-md-2 offset-md-9'>

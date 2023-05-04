@@ -2,7 +2,7 @@ import React from 'react'
 import '../Usercomponents/Navbar.css'
 function OwnerNav() {
   const nav={ display:'flex',justifyContent:'center',backgroundColor:'#333'}
-  const ul={display:'flex',listStyle:'none',padding:'0',margin:'0',float:'left',marginLeft:'18%'};
+  const ul={display:'flex',listStyle:'none',padding:'0',margin:'0',float:'left',marginLeft:'34%'};
   const a={display:'block',color:'white',textDecoration:'none',padding: '10px',borderRadius: '5px',transition:' background-color 0.3s ease'}
   
   return (
