@@ -77,7 +77,7 @@ function Login(){
         
         <Form.Group controlId="form.Pass">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="*******" name="password" onChange={(e)=>{setPassword(e.target.value); }} />
+            <Form.Control type="password" placeholder="*******" name="password" onChange={(e)=>{console.log(e.target.name+" "+e.target.value);setPassword(e.target.value); }} />
         </Form.Group>
         <br/>
         <Form.Group controlId="form.Role">
